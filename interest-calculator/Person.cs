@@ -20,7 +20,6 @@ namespace interest_calculator
             if (_totalInterest == null)            
                 _totalInterest = TotalInterest(Wallets);
             
-
             return _totalInterest;
         }
 

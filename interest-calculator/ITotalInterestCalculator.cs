@@ -16,6 +16,6 @@ namespace interest_calculator
                 _totalInterest = value;
             }
         }
-        double? TotalInterest();
+        public double? TotalInterest();
     }
 }

@@ -18,8 +18,7 @@ namespace interest_calculator
         public double? TotalInterest()
         {
             if (_totalInterest == null)            
-                _totalInterest = TotalInterest(Cards);                    
-            
+                _totalInterest = TotalInterest(Cards);                                
 
             return _totalInterest;
         }

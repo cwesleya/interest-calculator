@@ -4,6 +4,8 @@ namespace interest_calculator
 {
     public class Card : CardType, ITotalInterestCalculator
     {
+        private double? _totalInterest;
+
         public Card(string type, double balance)
         {
             _cardType = type;

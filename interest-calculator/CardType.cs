@@ -5,7 +5,6 @@ namespace interest_calculator
     {
         protected double _balance;
         protected double _rate;
-        protected double? _totalInterest;
         protected string _cardType;
 
         protected double GetInterestRate(string type)

@@ -13,7 +13,10 @@ namespace interest_calculator
 
         public double? TotalInterest()
         {
-            return _totalInterest == null ? _rate * _balance : _totalInterest;
+            if (_totalInterest == null)
+                _totalInterest = _rate * _balance;
+
+            return _totalInterest;
         }
 
         public double Balance() => _balance;

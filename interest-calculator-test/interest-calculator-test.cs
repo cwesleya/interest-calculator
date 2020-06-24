@@ -13,7 +13,6 @@ namespace interest_calculator_test
         private Card _visaCard = new Card("Visa", 100.0);
 
         [TestMethod]
-
         public void OnePerson_OneWallet_ThreeCards()
         {
             var cards = new List<Card>

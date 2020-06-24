@@ -8,7 +8,7 @@ namespace interest_calculator
         protected double? _totalInterest;
         protected string _cardType;
 
-        public double GetInterestRate(string type)
+        protected double GetInterestRate(string type)
         {
             switch (type)
             {

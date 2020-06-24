@@ -17,13 +17,17 @@ namespace interest_calculator
 
         public double? TotalInterest()
         {
-            if (_totalInterest == null)
-            {
-                _totalInterest = Wallets
-                    .Aggregate(0.0, (sum, wallet) => sum + (double)wallet.TotalInterest());
-            }
+            if (_totalInterest == null)            
+                _totalInterest = TotalInterest(Wallets);
+            
 
             return _totalInterest;
+        }
+
+        private double? TotalInterest(IList<Wallet> wallets)
+        {
+            return wallets
+                    .Aggregate(0.0, (walletSum, wallet) => walletSum + (double)wallet.TotalInterest());          
         }
     }
 }

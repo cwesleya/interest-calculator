@@ -10,7 +10,8 @@ namespace interest_calculator
         {
             _cardType = type;
             _balance = balance;
-            _rate = GetInterestRate(type);            
+            _rate = Enum.IsDefined(typeof(TypeName), type) ?
+                GetInterestRate(type) : 0.0;            
         }
 
         public double? TotalInterest()

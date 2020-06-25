@@ -7,19 +7,9 @@ namespace interest_calculator
         protected double _rate;
         protected string _cardType;
 
-        protected double GetInterestRate(string type)
+        protected double GetInterestRate(string name)
         {
-            switch (type)
-            {
-                case "Discover":
-                    return .01;
-                case "Mastercard":
-                    return .05;
-                case "Visa":
-                    return .10;
-                default:
-                    return 0;
-            }
+            return (double)(int)Enum.Parse(typeof(TypeName), name) / 100;
         }
     }
 }

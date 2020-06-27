@@ -8,5 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Utility\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Objects\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 </Project>

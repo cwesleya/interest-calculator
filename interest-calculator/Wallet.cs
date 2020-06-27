@@ -9,7 +9,7 @@ namespace interest_calculator
     {
         private double? _totalInterest;
 
-        public IList<ITotalInterestCalculator> Cards;
+        public List<ITotalInterestCalculator> Cards;
 
         public Wallet(List<ITotalInterestCalculator> cards)
         {

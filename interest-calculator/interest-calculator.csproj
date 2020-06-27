@@ -6,4 +6,7 @@
     <RootNamespace>interest_calculator</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Utility\" />
+  </ItemGroup>
 </Project>

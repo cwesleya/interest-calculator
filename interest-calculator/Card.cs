@@ -1,4 +1,5 @@
 ﻿using System;
+using interest_calculator.Utility;
 
 namespace interest_calculator
 {
@@ -17,7 +18,7 @@ namespace interest_calculator
         public double? TotalInterest()
         {
             if (_totalInterest == null)
-                _totalInterest = _rate * _balance;
+                _totalInterest = CalculateInterest.Calculate(_rate, _balance);
 
             return _totalInterest;
         }

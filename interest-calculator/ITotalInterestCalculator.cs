@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace interest_calculator
 {
     public interface ITotalInterestCalculator
     {
-        private double? _totalInterest
+        double? _totalInterest
         {
             get
             {
@@ -16,6 +17,7 @@ namespace interest_calculator
                 _totalInterest = value;
             }
         }
-        public double? TotalInterest();
+
+        double? TotalInterest();
     }
 }

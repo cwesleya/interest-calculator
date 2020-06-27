@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using interest_calculator.Utility;
 
 namespace interest_calculator
 {
@@ -8,25 +8,19 @@ namespace interest_calculator
     {
         private double? _totalInterest;
 
-        public List<Wallet> Wallets;
+        public IList<ITotalInterestCalculator> Wallets;
 
-        public Person(List<Wallet> wallets)
+        public Person(List<ITotalInterestCalculator> wallets)
         {
             Wallets = wallets;
         }
 
         public double? TotalInterest()
         {
-            if (_totalInterest == null)            
-                _totalInterest = TotalInterest(Wallets);
-            
-            return _totalInterest;
-        }
+            if (_totalInterest == null)
+                _totalInterest = CalculateInterest.Calculate(Wallets);
 
-        private double? TotalInterest(IList<Wallet> wallets)
-        {
-            return wallets
-                    .Aggregate(0.0, (walletSum, wallet) => walletSum + (double)wallet.TotalInterest());          
+            return _totalInterest;
         }
     }
 }

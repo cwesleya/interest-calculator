@@ -15,7 +15,7 @@ namespace interest_calculator_test
         [TestMethod]
         public void OnePerson_OneWallet_ThreeCards()
         {
-            var cards = new List<Card>
+            var cards = new List<ITotalInterestCalculator>
             {
                 _discoverCard,
                 _masterCard,
@@ -24,7 +24,7 @@ namespace interest_calculator_test
 
             var wallet = new Wallet(cards);
 
-            var person = new Person(new List<Wallet> { wallet });
+            var person = new Person(new List<ITotalInterestCalculator> { wallet });
 
             //total interest for this person
             Assert.AreEqual(16.0, person.TotalInterest());
@@ -38,10 +38,10 @@ namespace interest_calculator_test
         [TestMethod]
         public void OnePerson_TwoWallets_ThreeCards()
         {
-            var wallet1 = new Wallet(new List<Card> { _discoverCard, _visaCard });
-            var wallet2 = new Wallet(new List<Card> { _masterCard });
+            var wallet1 = new Wallet(new List<ITotalInterestCalculator> { _discoverCard, _visaCard });
+            var wallet2 = new Wallet(new List<ITotalInterestCalculator> { _masterCard });
 
-            var person = new Person(new List<Wallet> { wallet1, wallet2 });
+            var person = new Person(new List<ITotalInterestCalculator> { wallet1, wallet2 });
 
             //total interest for this person
             Assert.AreEqual(16.0, person.TotalInterest());
@@ -57,11 +57,11 @@ namespace interest_calculator_test
             var masterCard2 = new Card("Mastercard", 100);
             var visaCard2 = new Card("Visa", 100);
 
-            var wallet1 = new Wallet(new List<Card> { _discoverCard, _masterCard, _visaCard });
-            var wallet2 = new Wallet(new List<Card> { masterCard2, visaCard2 });
+            var wallet1 = new Wallet(new List<ITotalInterestCalculator> { _discoverCard, _masterCard, _visaCard });
+            var wallet2 = new Wallet(new List<ITotalInterestCalculator> { masterCard2, visaCard2 });
 
-            var person1 = new Person(new List<Wallet> { wallet1 });
-            var person2 = new Person(new List<Wallet> { wallet2 });
+            var person1 = new Person(new List<ITotalInterestCalculator> { wallet1 });
+            var person2 = new Person(new List<ITotalInterestCalculator> { wallet2 });
 
             //total interest per person
             Assert.AreEqual(16.0, person1.TotalInterest());
